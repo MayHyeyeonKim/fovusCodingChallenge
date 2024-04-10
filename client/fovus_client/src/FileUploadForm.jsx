@@ -80,9 +80,9 @@ const FileUploadForm = () => {
     const putCommand = new PutObjectCommand({
       Bucket: "fovus-storage",
       Key: s3Path,
-      Body: file, // 여기서 file은 파일의 데이터가 담긴 Blob 또는 Stream
-      ContentType: file.type, // 옵션: 파일 타입 설정
-      ACL: "public-read", // 옵션: 파일을 공개적으로 읽을 수 있도록 설정 (필요한 경우에만 사용)
+      Body: file, 
+      ContentType: file.type, 
+      // ACL: "public-read", 
     });
 
     try {
