@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { S3Client } from "@aws-sdk/client-s3";
 import { createPresignedPost } from "@aws-sdk/s3-presigned-post";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
+import axios from "axios";
 
 const Form = styled.form`
   display: flex;
@@ -80,14 +81,29 @@ const FileUploadForm = () => {
     const putCommand = new PutObjectCommand({
       Bucket: "fovus-storage",
       Key: s3Path,
-      Body: file, 
-      ContentType: file.type, 
-      // ACL: "public-read", 
+      Body: file,
+      ContentType: file.type,
+      // ACL: "public-read",
     });
 
     try {
+      // 파일이 잘 저장되었는지 response를 받는다. - s3 저장 성공
       const response = await s3Client.send(putCommand);
       console.log("File successfully uploaded to S3", response);
+
+      // API Gateway URL 확인
+      console.log("API Gateway URL:", process.env.REACT_APP_API_GATEWAY_URL);
+
+      // S3 업로드가 성공하면, API Gateway로 요청을 보내 데이터베이스에 입력
+      const apiGatewayResponse = await axios.post(
+        process.env.REACT_APP_API_GATEWAY_URL,
+        {
+          fileName: file.name,
+          filePath: s3Path,
+          inputText: inputText,
+        }
+      );
+      console.log("Data sent to API Gateway and inserted in DB", apiGatewayResponse.data);
     } catch (error) {
       console.error("An error occurred while uploading to S3", error);
     }
