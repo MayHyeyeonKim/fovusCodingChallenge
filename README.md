@@ -60,7 +60,6 @@ This system allows users to upload text and files through a responsive web inter
 
 ## Setup and Deployment
 
-_Instructions on setting up the environment and deploying the application._< /br>
 _comminnnngsoooonnnn_
 
 ## Error Log
