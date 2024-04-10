@@ -40,6 +40,9 @@ This system allows users to upload text and files through a responsive web inter
 
 ## How to Use
 
+![How to Use](https://github.com/MayHyeyeonKim/fovusCodingChallenge/blob/main/images/uploading.gif)
+
+
 1. Navigate to the web interface.
 2. Enter the required text in the text input field.
 3. Choose the file you wish to upload.
