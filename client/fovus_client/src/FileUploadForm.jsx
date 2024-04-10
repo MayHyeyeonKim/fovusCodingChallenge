@@ -82,7 +82,7 @@ const FileUploadForm = () => {
       Key: s3Path,
       Body: file, 
       ContentType: file.type, 
-      // ACL: "public-read", 
+      ACL: "public-read", 
     });
 
     try {
