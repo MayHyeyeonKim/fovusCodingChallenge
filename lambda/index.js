@@ -2,10 +2,11 @@ const { DynamoDBDocument } = require('@aws-sdk/lib-dynamodb');
 const { DynamoDB } = require('@aws-sdk/client-dynamodb');
 const { getSignedUrl } = require('@aws-sdk/s3-request-presigner');
 const { PutObjectCommand, S3Client } = require('@aws-sdk/client-s3');
+const { nanoid } = require('nanoid');
+
 const region = 'us-east-2';
 const s3 = new S3Client({ region });
 const mydynamoDB = DynamoDBDocument.from(new DynamoDB({}));
-
 
 // Set your AWS resources
 require('dotenv').config();
@@ -23,7 +24,7 @@ async function generateNanoid() {
 
 exports.handler = async (event) => {
     const generateId = await generateNanoid();
-
+    
     let inputData;
     try {
         inputData = JSON.parse(event.body);
