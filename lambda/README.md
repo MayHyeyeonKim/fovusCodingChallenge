@@ -1,6 +1,10 @@
 # My pain in buxx!! (Encountered Errors)
 
-downgrade the version to 3.3.1.
+## about nanoid
+Solution </br>
+- Downgrade the version to 3.3.1. {"nanoid": "^3.3.1"}
+- ES module Syntex disabled
+
 
 ```json
 2024-04-11T07:31:48.497Z	045fa3a5-51a1-4ea2-ba0e-7fe182a39109	ERROR	Invoke Error 	{
