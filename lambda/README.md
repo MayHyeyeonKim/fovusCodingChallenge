@@ -1,4 +1,4 @@
-# My pain in dabuxxx!! (Encountered Errors)
+# My pain in buxx!! (Encountered Errors)
 ```json
 2024-04-11T07:31:48.497Z	045fa3a5-51a1-4ea2-ba0e-7fe182a39109	ERROR	Invoke Error 	{
     "errorType": "Error",
