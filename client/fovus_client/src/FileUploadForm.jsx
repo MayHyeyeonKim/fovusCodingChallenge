@@ -94,7 +94,7 @@ const FileUploadForm = () => {
       // API Gateway URL 확인
       console.log("API Gateway URL:", process.env.REACT_APP_API_GATEWAY_URL);
     } catch (error) {
-      console.log("s3 에러는: ", error);
+      console.log("s3에러는: ", error);
       console.error("An error occurred while uploading to S3", error);
     }
     // S3 업로드가 성공하면, API Gateway로 요청을 보내 데이터베이스에 입력
@@ -108,7 +108,7 @@ const FileUploadForm = () => {
         }
       );
       console.log(
-        "Data sent to API Gateway and inserted in DB",
+        " S3 업로드가 성공하면, API Gateway로 요청을 보내 데이터베이스에 입력하러가는 길목",
         apiGatewayResponse.data
       );
     } catch(error) {

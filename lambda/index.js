@@ -13,6 +13,7 @@ const myBucket = process.env.MY_BUCKET;
 const tableName = process.env.TABLE_NAME;
 const contentT = "text/plain";
 
+
 // let nanoid;
 async function generateNanoid() {
   if (typeof nanoid === "undefined") {
@@ -28,7 +29,7 @@ exports.handler = async (event) => {
   };
 
   let body = JSON.stringify(responseBody);
-
+  console.log("body는: ", body)
   const headers = {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*",
@@ -36,8 +37,11 @@ exports.handler = async (event) => {
   };
 
   const no = await generateNanoid();
-
+  console.log("no는: ", no);
+  
   let inputData;
+ 
+  
   try {
     inputData = JSON.parse(event.body);
   } catch (e) {
@@ -46,43 +50,47 @@ exports.handler = async (event) => {
       statusCode: 400,
     };
   }
-  const { inpTxt, fileName } = inputData;
+  const { inputText, fileName } = inputData;
   const bucketName = myBucket;
-  const fileKey = `${fileName}.txt`;
-
-  return {
-    statusCode: 200,
-    headers,
-    body: "",
-  };
+  const fileKey = `${fileName}`;
+  // const fileKey = `${fileName}.txt`;
+ console.log("inputData는:", inputData, 
+ "  bucketName은: ", myBucket, 
+ "  fileKey는: ", fileKey);
 
   const dbParams = {
     TableName: tableName,
     Item: {
       id: no(),
-      inputText: inpTxt,
+      inputText: inputText,
       inputFile: `s3://${bucketName}/${fileKey}`,
     },
   };
-
+  // return {
+  //   statusCode: 200,
+  //   headers,
+  //   body: "",
+  // };
   try {
     const ourURL = await getSignedUrl(
       s3,
       new PutObjectCommand({
         Bucket: bucketName,
         Key: fileKey,
-        ContentType: contentT,
+      ContentType: 'image/png',
       }),
       { expiresIn: 3600 }
     );
-
-    await mydynamoDB.put(dbParams);
+    // console.log("ourURL은: ", ourURL);
+    // await mydynamoDB.put(dbParams);
+    // console.log("dbParams는: ", dbParams);
 
     return {
       statusCode: 200,
+      headers,
       body: JSON.stringify({
-        id: dbParams.Item.id,
-        s3Path: dbParams.Item.inputFile,
+        // id: dbParams.Item.id,
+        // s3Path: dbParams.Item.inputFile,
         ourURL,
       }),
     };
@@ -91,6 +99,7 @@ exports.handler = async (event) => {
     // console.error('Error:', err);
     return {
       statusCode: 500,
+      headers,
       body,
     };
   }
