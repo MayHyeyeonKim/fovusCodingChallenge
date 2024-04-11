@@ -1,0 +1,4 @@
+14
+
+//특정 폴더(프로젝트) 내에서만 Node.js 버전을 설정하고 싶다면, nvm을 사용하여 해당 폴더에 .nvmrc 파일을 생성하고 그 안에 원하는 Node.js 버전을 지정
+// nvm use 실행하면 : Now using node v14.21.3 (npm v6.14.18)

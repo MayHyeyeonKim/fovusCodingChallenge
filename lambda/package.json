@@ -1,0 +1,20 @@
+{
+    "name": "fovus-lambda",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "May",
+    "dependencies": {
+        "@aws-sdk/client-dynamodb": "^3.549.0",
+        "@aws-sdk/client-ec2": "^3.549.0",
+        "@aws-sdk/client-s3": "^3.550.0",
+        "@aws-sdk/lib-dynamodb": "^3.549.0",
+        "@aws-sdk/s3-request-presigner": "^3.550.0",
+        "aws-sdk": "^2.1594.0",
+        "dotenv": "^16.4.5",
+        "nanoid": "^5.0.7"
+    }
+}
