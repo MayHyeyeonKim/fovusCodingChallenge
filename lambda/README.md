@@ -1,4 +1,4 @@
-# My pain in buxx!! (Encountered Errors)
+# My pain in da buxx!! (Encountered Errors)
 
 ## about nanoid
 Solution </br>
