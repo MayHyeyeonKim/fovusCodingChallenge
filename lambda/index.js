@@ -58,14 +58,14 @@ exports.handler = async (event) => {
  "  bucketName은: ", myBucket, 
  "  fileKey는: ", fileKey);
 
-  const dbParams = {
-    TableName: tableName,
-    Item: {
-      id: no(),
-      inputText: inputText,
-      inputFile: `s3://${bucketName}/${fileKey}`,
-    },
-  };
+ const dbParams = {
+   TableName: tableName,
+   Item: {
+     id: no,
+     inputText: inputText,
+     inputFile: `s3://${bucketName}/${fileKey}`,
+   },
+ };
   // return {
   //   statusCode: 200,
   //   headers,
