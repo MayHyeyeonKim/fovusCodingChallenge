@@ -93,8 +93,12 @@ const FileUploadForm = () => {
 
       // API Gateway URL 확인
       console.log("API Gateway URL:", process.env.REACT_APP_API_GATEWAY_URL);
-
-      // S3 업로드가 성공하면, API Gateway로 요청을 보내 데이터베이스에 입력
+    } catch (error) {
+      console.log("s3 에러는: ", error);
+      console.error("An error occurred while uploading to S3", error);
+    }
+    // S3 업로드가 성공하면, API Gateway로 요청을 보내 데이터베이스에 입력
+    try {
       const apiGatewayResponse = await axios.post(
         process.env.REACT_APP_API_GATEWAY_URL,
         {
@@ -103,9 +107,12 @@ const FileUploadForm = () => {
           inputText: inputText,
         }
       );
-      console.log("Data sent to API Gateway and inserted in DB", apiGatewayResponse.data);
-    } catch (error) {
-      console.error("An error occurred while uploading to S3", error);
+      console.log(
+        "Data sent to API Gateway and inserted in DB",
+        apiGatewayResponse.data
+      );
+    } catch(error) {
+      console.log("apigateway에러: ", error);
     }
   };
 
