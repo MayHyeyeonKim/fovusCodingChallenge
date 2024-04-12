@@ -1,11 +1,6 @@
 # My pain in da buxx!! (Encountered Errors)
 
 ## about nanoid
-Solution </br>
-- Downgrade the version to 3.3.1. {"nanoid": "^3.3.1"}
-- ES module Syntex disabled
-
-
 ```json
 2024-04-11T07:31:48.497Z	045fa3a5-51a1-4ea2-ba0e-7fe182a39109	ERROR	Invoke Error 	{
     "errorType": "Error",
@@ -26,8 +21,13 @@ Solution </br>
         "    at importModuleDynamicallyWrapper (node:internal/vm/module:438:21)"
     ]
 }
-
 ```
+### Issue Description
+Cannot find package 'nanoid' imported from /var/task/index.js
+### Solution
+- Downgrade the version to 3.3.1. {"nanoid": "^3.3.1"}
+- ES module Syntex disabled
+
 
 ## The second lambda that does the following operations:
 
@@ -47,4 +47,7 @@ Solution </br>
 </ul>
 
 ### Issue Description
-Currently, there is a critical issue where the creation of the EC2 instance is stuck in an infinite loop. This bug is causing significant delays and resource consumption, necessitating immediate attention to identify and resolve the underlying cause of the loop.
+Currently, there is a critical issue where the creation of the EC2 instance is stuck in an infinite loop. 
+
+### Solution
+Eventually I'll figure it out!
