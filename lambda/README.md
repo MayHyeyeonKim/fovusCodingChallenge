@@ -1,7 +1,7 @@
 # My pain in da buxx!! (Encountered Errors)
 
 ## about nanoid
-```json
+```javascript
 2024-04-11T07:31:48.497Z	045fa3a5-51a1-4ea2-ba0e-7fe182a39109	ERROR	Invoke Error 	{
     "errorType": "Error",
     "errorMessage": "Cannot find package 'nanoid' imported from /var/task/index.js\nDid you mean to import nanoid/index.cjs?",
