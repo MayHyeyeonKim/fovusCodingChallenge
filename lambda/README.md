@@ -1,6 +1,6 @@
 # My pain in da buxx!! (Encountered Errors)
 
-## about nanoid
+## About nanoid
 ```javascript
 2024-04-11T07:31:48.497Z	045fa3a5-51a1-4ea2-ba0e-7fe182a39109	ERROR	Invoke Error 	{
     "errorType": "Error",
@@ -29,7 +29,7 @@ Cannot find package 'nanoid' imported from /var/task/index.js
 - ES module Syntex disabled
 
 
-## The second lambda that does the following operations:
+## The second lambda that does the following operations
 
 ![Architecture Diagram](https://github.com/MayHyeyeonKim/fovusCodingChallenge/blob/main/images/triggerErr.png)
 
