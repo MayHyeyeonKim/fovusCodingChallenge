@@ -29,6 +29,18 @@ Solution </br>
 
 ```
 
-## 
+## The second lambda that does the following operations:
 
 ![Architecture Diagram](https://github.com/MayHyeyeonKim/fovusCodingChallenge/blob/main/images/triggerErr.png)
+
+
+The second Lambda function catches the event inserted into the database and triggers another Lambda function to perform subsequent tasks.
+This Lambda function is responsible for creating a new EC2 instance, downloading a script from the S3 bucket, and executing the script.
+
+The script should:  
+    - Retrieve the input from DynamoDB using the ID. <>
+    - Append the input text to the downloaded input file, save it, and leave the previous file unchanged.
+    - Upload the updated file back to the S3 bucket.
+
+Store the metadata of the newly created file in the DynamoDB table.
+Carry out the process from executing the script to shutting down the EC2 instance.
