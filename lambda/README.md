@@ -28,3 +28,7 @@ Solution </br>
 }
 
 ```
+
+## 
+
+![Architecture Diagram](https://github.com/MayHyeyeonKim/fovusCodingChallenge/blob/main/images/triggerErr.png)
