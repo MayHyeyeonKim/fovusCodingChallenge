@@ -37,7 +37,7 @@ Cannot find package 'nanoid' imported from /var/task/index.js
 <li>The second Lambda function catches the event inserted into the database and triggers another Lambda function to perform subsequent tasks.
 <li>This Lambda function is responsible for creating a new EC2 instance, downloading a script from the S3 bucket, and executing the script.
 
-<li>The script should:  
+<li>The script should:  </br>
     - Retrieve the input from DynamoDB using the ID. </br>
     - Append the input text to the downloaded input file, save it, and leave the previous file unchanged. </br>
     - Upload the updated file back to the S3 bucket. </br>
