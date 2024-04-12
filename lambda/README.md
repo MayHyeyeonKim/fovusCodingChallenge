@@ -45,3 +45,6 @@ Solution </br>
 <li>Store the metadata of the newly created file in the DynamoDB table.
 <li>Carry out the process from executing the script to shutting down the EC2 instance.
 </ul>
+
+### Issue Description
+Currently, there is a critical issue where the creation of the EC2 instance is stuck in an infinite loop. This bug is causing significant delays and resource consumption, necessitating immediate attention to identify and resolve the underlying cause of the loop.
