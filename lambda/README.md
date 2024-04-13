@@ -50,4 +50,4 @@ Cannot find package 'nanoid' imported from /var/task/index.js
 Currently, there is a critical issue where the creation of the EC2 instance is stuck in an infinite loop. 
 
 ### Solution
-Eventually I'll figure it out!
+This was not an issue with the code itself, but rather a need to extend the timeout in the Lambda's general configuration. If the timeout is set too short, the Lambda will time out during execution and will not terminate normally, which triggers a retry.
