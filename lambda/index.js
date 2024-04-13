@@ -21,6 +21,8 @@ const tableName = 'fovus-table2';
 exports.handler = async (event) => {
   const { nanoid } = require("nanoid");
   const no = nanoid();
+  //이거 람다 handler 외부에 두면 한번 실행되고 공유된다.
+  // Lambda의 Execution Envirment는 재사용 되는데, hanlder 바깥의 스코프에 있는 부분은 계속 유지될 수 있다.
   console.log("no가 생성이 잘되니?: ", no);
   
   const headers = {
